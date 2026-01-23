@@ -1,5 +1,54 @@
-h1, h2 {
-    text-align: center;    
+h1 {
+    font-family: Georgia;
+    text-align: center;
+    color: cornflowerblue;
+    font-size: 50px;
+    height: 100px 30px;
+    margin: -5px
 }
 
+h2, p {
+    text-align: center;
+    height: 10px;
+    font-family: Tahoma;
+    color: white;
+}
 
+#signup-form {
+    background-color: cornflowerblue;
+    font-family: Tahoma;
+    border-radius: 8px;
+    max-width: 30%;
+    min-width: 25%;
+    margin: auto;
+    margin-top: 35px;
+    padding: 3px;
+}
+
+.text {
+    display: inline-block;
+}
+
+input {
+    display: block;
+}
+
+.radio {
+    display: inline-flex;
+    align-items: center;
+}
+
+.radio-input {
+    margin: 0 0.5em 0;
+}
+
+.access {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: -15px;
+}
+
+legend,
+label {
+    color: white;
+}
