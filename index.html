@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Cadastro</h1>
+        <h2>Criar nova conta</h2>
+    </header>
+
+    <main>
+        <form>
+            <fieldset>
+                <legend>Perfil</legend>
+
+                <label for="name">Nome:</label><br>
+                <input type="text" id="name" required autofocus><br>
+
+                <label for="man">Masculino</label>
+                <input type="radio" id="man" name="genero">
+
+                <label for="woman">Feminino</label>
+                <input type="radio" id="woman" name="genero">
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Acesso</legend>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" required><br>
+
+                <label for="pwd">Senha:</label><br>
+                <input type="password" id="pwd" required>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Data de Nascimento</legend>
+
+                <label for="day">Dia:</label>
+                <select id="day" name="day"></select>
+
+                <label for="month">Mês:</label>
+                <select id="month" name="month"></select>
+
+                <label for="year">Ano:</label>
+                <select id="year" name="year"></select>
+            </fieldset>
+        </form>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
