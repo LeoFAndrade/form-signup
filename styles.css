@@ -3,11 +3,13 @@ h1 {
     text-align: center;
     color: cornflowerblue;
     font-size: 50px;
-    height: 100px 30px;
-    margin: -5px
+    margin: 0 auto;
+    /* centraliza horizontalmente */
+    padding: 20px 0;
 }
 
-h2, p {
+h2,
+p {
     text-align: center;
     height: 10px;
     font-family: Tahoma;
@@ -18,8 +20,8 @@ h2, p {
     background-color: cornflowerblue;
     font-family: Tahoma;
     border-radius: 8px;
-    max-width: 30%;
-    min-width: 25%;
+    max-width: 430px;
+    width: 90%;
     margin: auto;
     margin-top: 35px;
     padding: 3px;
@@ -51,4 +53,8 @@ input {
 legend,
 label {
     color: white;
+}
+
+.cadastro {
+    margin: 0 auto;
 }

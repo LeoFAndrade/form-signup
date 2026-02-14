@@ -15,15 +15,17 @@
     </header>
 
     <main>
-        <form id="signup-form">
+        <form id="signup-form" method="POST" action="cadastro.php">
 
             <h2>Criar nova conta</h2>
             <p>Simples e rápido.</p>
 
             <fieldset>
                 <legend>Perfil</legend>
-                <label class="text" for="name"><input id="name" placeholder="Nome" required autofocus></label>
-                <label class="text" for="surname"><input id="surname" placeholder="Sobrenome" required></label>
+                <label class="text" for="name"><input id="name" name="name" placeholder="Nome" required
+                        autofocus></label>
+                <label class="text" for="surname"><input id="surname" name="surname" placeholder="Sobrenome"
+                        required></label>
             </fieldset>
 
             <fieldset>
@@ -41,20 +43,27 @@
 
             <fieldset>
                 <legend>Gênero:</legend>
-                <label class="radio" for="man">Masculino<input type="radio" id="man" class="radio-input"
-                        name="gender"></label>
-                <label class="radio" for="female">Feminino<input type="radio" id="female" class="radio-input"
-                        name="gender"></label>
+                <label class="radio" for="man">Masculino<input type="radio" id="man" value="Masculino"
+                        class="radio-input" name="gender"></label>
+                <label class="radio" for="female">Feminino<input type="radio" id="female" value="Feminino"
+                        class="radio-input" name="gender"></label>
+                <label class="radio" for="other">Outro/Não informar<input type="radio" id="other" value="Outro"
+                        class="radio-input" name="gender"></label>
             </fieldset>
 
             <fieldset>
                 <legend>Acesso</legend>
-                <label class="access" for="email"><input type="email" id="email" placeholder="Email"
-                        required></label><br>
-                <label class="access" for="pwd"><input type="password" id="pwd" placeholder="Senha"
-                        required></label><br>
+                <label class="access" for="email"><input type="email" id="email" name="email" placeholder="Email"
+                        autocomplete="email" required></label><br>
+                <label class="access" for="pwd"><input type="password" id="pwd" name="pwd" autocomplete="new-password"
+                        placeholder="Senha" required></label><br>
             </fieldset>
 
+            <button class="cadastro" type="submit">Cadastre-se</button>
+
+            <footer>
+                <p>&copy; 2026 y. Nenhum direito reservado.</p>
+            </footer>
         </form>
     </main>
 
