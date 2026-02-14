@@ -27,11 +27,23 @@ p {
     padding: 3px;
 }
 
+fieldset:first-of-type {
+    display: flex;
+    justify-content: space-between;
+}
+
 .text {
     display: inline-block;
 }
 
-input {
+input[type="text"] {
+    width: 190px;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.access input {
     display: block;
 }
 
@@ -56,5 +68,6 @@ label {
 }
 
 .cadastro {
-    margin: 0 auto;
+    display: block;
+    margin: 20px auto;
 }
