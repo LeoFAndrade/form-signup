@@ -4,8 +4,11 @@ for (let i = 1; i <= 31; i++) {
 
 const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
+document.getElementById("month").innerHTML = "";
+
 months.forEach((m, i) => {
-    document.getElementById("month").innerHTML += `<option value="${m}">${m}</option>`;
+    let num_month = (i + 1).toString().padStart(2, '0');
+    document.getElementById("month").innerHTML += `<option value="${num_month}">${m}</option>`;
 });
 
 for (let i = 1905; i <= 2026; i++) {
