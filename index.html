@@ -22,9 +22,9 @@
 
             <fieldset>
                 <legend>Perfil</legend>
-                <label class="text" for="name"><input type="text" id="name" name="name" placeholder="Nome" required
+                <label class="text" for="name"><input type="text" id="name" name="name" placeholder="Nome" minlength="2" maxlength="50" required
                         autofocus></label>
-                <label class="text" for="surname"><input type="text" id="surname" name="surname" placeholder="Sobrenome"
+                <label class="text" for="surname"><input type="text" id="surname" name="surname" placeholder="Sobrenome" minlength="2" maxlength="50"
                         required></label>
             </fieldset>
 
@@ -32,23 +32,23 @@
                 <legend>Data de Nascimento</legend>
 
                 <label for="day">Dia:</label>
-                <select id="day" name="day"></select>
+                <select id="day" name="day" required></select>
 
                 <label for="month">Mês:</label>
-                <select id="month" name="month"></select>
+                <select id="month" name="month" required></select>
 
                 <label for="year">Ano:</label>
-                <select id="year" name="year"></select>
+                <select id="year" name="year" required></select>
             </fieldset>
 
             <fieldset>
                 <legend>Gênero:</legend>
                 <label class="radio" for="man">Masculino<input type="radio" id="man" value="Masculino"
-                        class="radio-input" name="gender"></label>
+                        class="radio-input" name="gender" required></label>
                 <label class="radio" for="female">Feminino<input type="radio" id="female" value="Feminino"
-                        class="radio-input" name="gender"></label>
+                        class="radio-input" name="gender" required></label>
                 <label class="radio" for="other">Outro/Não informar<input type="radio" id="other" value="Outro"
-                        class="radio-input" name="gender"></label>
+                        class="radio-input" name="gender" required></label>
             </fieldset>
 
             <fieldset>
@@ -56,7 +56,7 @@
                 <label class="access" for="email"><input type="email" id="email" name="email" placeholder="Email"
                         autocomplete="email" required></label><br>
                 <label class="access" for="pwd"><input type="password" id="pwd" name="pwd" autocomplete="new-password"
-                        placeholder="Senha" required></label><br>
+                        placeholder="Senha" minlength="9" required></label><br>
             </fieldset>
 
             <button class="cadastro" type="submit">Cadastre-se</button>
