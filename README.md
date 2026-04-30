@@ -1,66 +1,69 @@
-# Form Signup
+# Sistema de Cadastro de Usuários
 
-Um formulário de cadastro responsivo com validação de dados em JavaScript e backend PHP.
+Sistema completo de cadastro de usuários com validação frontend e backend, proteção contra SQL injection e criptografia de senhas.
 
 ## Descrição
 
-Este projeto implementa um formulário de criação de conta com campos para:
-- Perfil: Nome e gênero (masculino/feminino)
-- Acesso: Email e senha
-- Data de Nascimento: Dia, mês e ano com seletores dinâmicos
+Sistema de registro de usuários implementando boas práticas de segurança e validação de dados em múltiplas camadas (HTML5, JavaScript e PHP).
 
 ## Funcionalidades
 
-- Interface limpa e centrada
-- Design responsivo
-- Validação de campos obrigatórios
-- Seletores de data dinâmicos populados com JavaScript
-- Estilização CSS personalizada
-- Estrutura preparada para integração com PHP backend
+- **Prepared Statements**: Proteção total contra SQL Injection.
+- **Criptografia de Senhas**: Uso de `password_hash` com algoritmo BCrypt.
+- **Verificação de Disponibilidade**: Checagem de e-mail duplicado antes do cadastro.
+- **Validação Dupla**: Dados validados no navegador (JS) e no servidor (PHP).
+- **Inteligência de Datas**: Detecção de datas inexistentes (ex: 30 de fevereiro) e cálculo de idade.
+- **Requisito de Idade**: Restrição para menores de 13 anos.
 
 ## Tecnologias
 
-- HTML5
-- CSS3
-- JavaScript
-- PHP
+- **Frontend**: HTML5, CSS3 (Flexbox), JavaScript (ES6+).
+- **Backend**: PHP 7.4+.
+- **Banco de Dados**: MySQL 5.7+.
 
-## Estrutura do Projeto
+## Instalação e Configuração
 
-```
-form-signup/
-├── index.html
-├── index.php
-├── script.js
-├── styles.css
-└── README.md
-```
+1. **Banco de Dados**: 
+   - Crie um banco chamado `y_social_network`.
+   - Importe o arquivo `y_social_network.sql`.
+   - **Nota**: Certifique-se de que a coluna `password` na tabela `users` seja do tipo `VARCHAR(255)`.
 
-## Como Usar
+2. **Servidor**:
+   - Coloque os arquivos no seu servidor local (XAMPP, WAMP, etc).
+   - Configure as credenciais de acesso (host, user, pass) no topo do arquivo `register.php`.
 
-1. Requisitos:
-   - Servidor web com suporte a PHP (XAMPP, LAMP, LEMP)
-   - Navegador moderno
+## Estrutura do Banco de Dados (Tabela `users`)
 
-2. Instalação:
-   - Coloque os arquivos na raiz de documentos do seu servidor
-   - Acesse via http://localhost/form-signup
+| Campo | Tipo | Descrição |
+| :--- | :--- | :--- |
+| id | INT | Chave Primária (Auto Incremento) |
+| name | VARCHAR(100) | Nome do usuário |
+| surname | VARCHAR(255) | Sobrenome completo |
+| day_of_birth | DATE | Data de nascimento (AAAA-MM-DD) |
+| gender | VARCHAR(20) | Gênero (Masculino/Feminino/Outro) |
+| email | VARCHAR(150) | E-mail único (Índice Unique) |
+| password | VARCHAR(255) | Hash da senha criptografada |
 
-3. Funcionamento:
-   - O formulário é carregado em index.html
-   - O JavaScript popula automaticamente os seletores de data
-   - O envio é processado em index.php
+## Validações Implementadas
 
-## Detalhes Técnicos
+### JavaScript (Frontend)
+- Preenchimento obrigatório de todos os campos.
+- Validação lógica de data (impede dias 31 em meses de 30 dias).
+- Cálculo de idade em tempo real (mínimo 13 anos).
+- Verificação de seleção de gênero.
+- Comprimento mínimo de senha (**9 caracteres**).
 
-### JavaScript
-- Popula dias (1-31), meses (Janeiro-Dezembro) e anos (1905-2026)
+### PHP (Backend)
+- Nova sanitização de strings com `htmlspecialchars` e `trim`.
+- Validação de formato de e-mail com `FILTER_VALIDATE_EMAIL`.
+- Verificação rigorosa de data com `checkdate()`.
+- Proteção contra e-mails duplicados via consulta `SELECT`.
+- Garantia de integridade para o campo gênero.
 
-### HTML
-- Campos obrigatórios marcados com `required`
-- Input de nome com `autofocus`
-- Fieldsets para organização dos grupos de informações
+## Segurança
+- Uso de **BCrypt** para armazenamento de senhas.
+- Fechamento de conexões e statements (`$stmt->close()`) para evitar vazamento de memória.
+- Separação de lógica de validação e inserção.
 
-### CSS
-- Centralização de títulos
-- Pronto para expansão e personalização
+## Licença
+Uso livre para fins educacionais.
